@@ -2,6 +2,15 @@ from fastapi import APIRouter
 
 endpoints_router = APIRouter()
 
+data = [
+    "bob",
+    "sue",
+    "jim",
+    "brandon",
+    "adam",
+    "noah"
+]
+
 #used to call Sport Function
 @endpoints_router.get("/sport")
 def sport():
@@ -11,14 +20,8 @@ def sport():
 
 #used to call the season Function
 @endpoints_router.get("/season")
-def season():
-    return{
-        "Season Result"
-    }
-
-#Limit function
-@endpoints_router.get("/limit")
-def limit():
-    return{
-        "limit result"
+def season(limit: int = 10):
+    return {
+        "limit": limit,
+        "data": data[:limit],
     }

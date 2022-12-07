@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from .endpoints import endpoints_router
 import csv
 import datetime
 
@@ -17,13 +18,4 @@ def parse(file):
 data = parse("./sports/data.csv")
 
 app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello world!"}
-
-@app.get("/results")
-async def results():
-    return {"results": data}
-
+app.include_router(endpoints_router)

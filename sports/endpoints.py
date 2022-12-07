@@ -16,3 +16,9 @@ def season():
         "Season Result"
     }
 
+#Limit function
+@endpoints_router.get("/limit")
+def limit():
+    return{
+        "limit result"
+    }

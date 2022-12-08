@@ -131,3 +131,7 @@ websocket-client==1.4.1
 websockets==10.3
 Werkzeug==2.2.2
 wrapt==1.14.1
+asyncpg==0.22.0
+ormar==0.10.5
+psycopg2-binary==2.8.6
+uvicorn==0.13.4

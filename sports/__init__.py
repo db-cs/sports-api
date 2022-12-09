@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from enum import Enum
+from .endpoints import endpoints_router
 import csv
 import datetime
 
@@ -12,6 +13,7 @@ data = [
 ]
 
 app = FastAPI()
+app.include_router(endpoints_router)
 
 @app.get("/")
 async def root():

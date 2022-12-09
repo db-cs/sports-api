@@ -1,15 +1,7 @@
 from fastapi import APIRouter
+from .database.databases import data
 
 endpoints_router = APIRouter()
-
-data = [
-    "bob",
-    "sue",
-    "jim",
-    "brandon",
-    "adam",
-    "noah"
-]
 
 #used to call Sport Function
 @endpoints_router.get("/sport")
@@ -25,3 +17,7 @@ def season(limit: int = 10):
         "limit": limit,
         "data": data[:limit],
     }
+
+@endpoints_router.get("/win/")
+def win():
+    return (data)

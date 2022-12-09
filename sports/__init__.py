@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from typing import Optional
 from enum import Enum
 import csv
 import datetime
+
 
 data = [
     {"season": 0, "results": "win", "sport": "soccer"},
@@ -51,3 +51,4 @@ async def get_sport(sport: Sports, limit: int = 10):
     return {"limit": limit, "results": output[:limit]}
 
 results = get_sport(Sports.SOCCER, 5)
+
